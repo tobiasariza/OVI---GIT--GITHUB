@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div align="center">
+  <p><strong>PASOS PARA LA CREACI&Oacute;N DE  REPOSITORIOS, VALIDAR CAMBIOS Y SINCRONIZAR GIT CON GITHUB</strong></p>
+  <table width="1136">
+    <tr>
+      <td><p><strong>Creando nuestro repositorio: </strong></p>
+      <p>Cualquier carpeta de nuestro sistema puede ser un contenedor o repositorio para Git. Ah&iacute;&nbsp;se establecer&aacute; la configuraci&oacute;n e historial bajo una carpeta nombrada&nbsp;<strong>.git</strong>&nbsp;que se encuentra oculta. No es necesario&nbsp;iniciar nuestro proyecto a la par que un repositorio. De hecho, estos se pueden crear a&uacute;n cuando ya hemos avanzado con nuestro c&oacute;digo. </p>
+      <p>Por ejemplo,&nbsp;si tenemos la estructura de un sistema o librer&iacute;a sencilla: </p>
+      <p>[code] /proyectos/mi-libreria /proyectos/mi-libreria/include /proyectos/mi-libreria/include/sistema.class.php /proyectos/mi-libreria/include/funciones.php /proyectos/mi-libreria/index.php [/code] </p>
+      <p>S&oacute;lo debemos&nbsp;ubicarnos en la carpeta y ejecutar&nbsp;<strong>git init</strong>para crear el repositorio: </p>
+      <p>[code] $ cd /proyectos/mi-libreria $ git init Initialized empty Git repository in /proyectos/mi-libreria/.git/ [/code].</p>
+      <p><strong>Validando cambios (guardar): </strong></p>
+      <p>Tienes un repositorio Git completo, y una copia de trabajo de los archivos de ese proyecto. Necesitas hacer algunos cambios, y confirmar instant&aacute;neas de esos cambios a tu repositorio cada vez que el proyecto alcance un estado que desees grabar.</p>
+      <p>Recuerda que cada archivo de tu directorio de trabajo puede estar en uno de estos dos estados: bajo seguimiento (tracked), o sin seguimiento (untracked). Los archivos bajo seguimiento son aquellos que exist&iacute;an en la &uacute;ltima instant&aacute;nea; pueden estar sin modificaciones, modificados, o preparados. Los archivos sin seguimiento son todos los dem&aacute;s &mdash;cualquier archivo de tu directorio que no estuviese en tu &uacute;ltima instant&aacute;nea ni est&aacute; en tu &aacute;rea de preparaci&oacute;n&mdash;. La primera vez que clonas un repositorio, todos tus archivos estar&aacute;n bajo seguimiento y sin modificaciones, ya que los acabas de copiar y no has modificado nada.</p>
+      <p>A medida que editas archivos, Git los ve como modificados, porque los has cambiado desde tu &uacute;ltima confirmaci&oacute;n. Preparas estos archivos modificados y luego confirmas todos los cambios que hayas preparado, y el ciclo se repite. Este proceso queda ilustrado en la Figura 2-1.</p>
+      <p align="center"><img src="18333fig0201-tn.png" width="500" height="317" /></p>
+      <p align="center"><em>Figura 2-1. El ciclo de vida del estado de tus archivos.</em></p>
+      <p align="left"><strong>Sincronizando GIT con GITHUB: </strong></p>
+      <p>Lo primero ser&aacute; ejecutar, dentro del  directorio local del proyecto, el siguiente comando:</p>
+      <div><br />
+        <em>git remote -v </em></div>
+      <p>Lo cual nos mostrar&aacute; los repositorios  remotos de nuestro repositorio:</p>
+      <div><br />
+        <em>origin&nbsp;&nbsp;&nbsp;  git@github.com:barbanet/magento2.git (fetch)<br />
+        origin&nbsp;&nbsp;&nbsp;  git@github.com:barbanet/magento2.git (push) </em></div>
+      <p>Ahora, agregamos el upstream para nuestro  repositorio, que es el repositorio original desde el cual hicimos el fork.<br />
+        Siguiendo mi ejemplo, ejecutamos:</p>
+      <div><br />
+        <em>git remote add upstream  git@github.com:magento/magento2.git </em></div>
+      <p>Si volvemos listar los repositorios  remotos, tendr&iacute;amos que ver:</p>
+      <div><br />
+        <em>origin&nbsp;&nbsp;&nbsp;  git@github.com:barbanet/magento2.git (fetch)<br />
+        origin&nbsp;&nbsp;&nbsp;  git@github.com:barbanet/magento2.git (push)<br />
+        upstream&nbsp;&nbsp;&nbsp;  git@github.com:magento/magento2.git (fetch)<br />
+        upstream&nbsp;&nbsp;&nbsp;  git@github.com:magento/magento2.git (push) </em></div>
+      <p>Hasta ac&aacute; s&oacute;lo agregamos los repositorios  con los cuales vamos a sincronizar. Ahora toca actualizar nuestra copia local.<br />
+        Actualizamos nuestra copia de upstream.</p>
+      <div><br />
+        <em>git fetch upstream </em></div>
+      <p>Una vez terminado, habremos descargado la  &uacute;ltima versi&oacute;n de ese repositorio.</p>
+      <div><br />
+        <em>remote: Counting objects: 21970, done.<br />
+        remote: Compressing objects: 100%  (10506/10506), done.<br />
+        remote: Total 21970 (delta 11123), reused  17158 (delta 8684)<br />
+        Receiving objects: 100% (21970/21970), 9.15  MiB | 354 KiB/s, done.<br />
+        Resolving deltas: 100% (11123/11123), done.<br />
+        From github.com:magento/magento2<br />
+        * [new branch]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; master&nbsp;&nbsp;&nbsp;&nbsp;  -&gt; upstream/master </em></div>
+      <p>Ahora cambiamos a nuestro branch master.</p>
+      <div><br />
+        <em>git checkout master </em></div>
+      <p>Y para finalizar, mergeamos el branch  master de upastream con nuestro master.</p>      <p align="left">&nbsp;</p></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+
+</html>

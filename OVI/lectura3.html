@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div align="center">
+  <p><strong>PASOS  PARA LA INSTALACI&Oacute;N DE LA HERRAMIENTA GIT EN UN ORDENADOR</strong></p>
+  <table width="1136">
+    <tr>
+      <td width="567"><p><strong>Instalaci&oacute;n en Windows:</strong> </p>
+      <p>Instalar Git en Windows es muy f&aacute;cil. El proyecto msysGit tiene uno de los procesos de instalaci&oacute;n m&aacute;s sencillos. Simplemente descarga el archivo exe del instalador desde la p&aacute;gina de GitHub, y ejec&uacute;talo: enlace de descarga: <a href="http://msysgit.github.com/">http://msysgit.github.com/</a></p>
+      <p><strong>Instalaci&oacute;n desde codigo fuente en Linux: </strong></p>
+      <p>Si puedes, en general es &uacute;til instalar Git desde c&oacute;digo fuente, porque obtendr&aacute;s la versi&oacute;n m&aacute;s reciente. Cada versi&oacute;n de Git tiende a incluir &uacute;tiles mejoras en la interfaz de usuario, por lo que utilizar la &uacute;ltima versi&oacute;n es a menudo el camino m&aacute;s adecuado si te sientes c&oacute;modo compilando software desde c&oacute;digo fuente. Tambi&eacute;n ocurre que muchas distribuciones de Linux contienen paquetes muy antiguos; as&iacute; que a menos que est&eacute;s en una distribuci&oacute;n muy actualizada o est&eacute;s usando backports, instalar desde c&oacute;digo fuente puede ser la mejor opci&oacute;n.</p>
+      <p>Para instalar Git, necesitas tener las siguientes librer&iacute;as de las que Git depende: curl, zlib, openssl, expat y libiconv. Por ejemplo, si est&aacute;s en un sistema que tiene yum (como Fedora) o apt-get (como un sistema basado en Debian), puedes usar estos comandos para instalar todas las dependencias:</p>
+      <pre>$ yum install curl-devel expat-devel gettext-devel \
+openssl-devel zlib-devel    
+
+
+$ apt-get install libcurl4-gnutls-dev libexpat1-dev gettext \
+libz-dev libssl-dev  </pre>
+      <p>Cuando tengas todas las dependencias necesarias, puedes descargar la versi&oacute;n m&aacute;s reciente de Git desde su p&aacute;gina web:</p>
+      <pre>http://git-scm.com/download  </pre>
+      <p>Luego compila e instala:</p>
+      <pre>$ tar -zxf git-1.6.0.5.tar.gz  
+$ cd git-1.6.0.5  
+$ make prefix=/usr/local all  
+$ sudo make prefix=/usr/local install  </pre>
+      <p>Una vez hecho esto, tambi&eacute;n puedes obtener Git, a trav&eacute;s del propio Git, para futuras actualizaciones:</p>
+      <pre>$ git clone git://git.kernel.org/pub/scm/git/git.git</pre></td>
+      <td width="553"><div align="center">
+        <p><img src="instalacion-git.png" width="441" height="338" /></p>
+        <p><img src="gitw-6.png" width="545" height="335" /></p>
+      </div></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>
